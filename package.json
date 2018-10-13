@@ -10,7 +10,7 @@
   },
   "scripts": {
     "client": "react-scripts start",
-    "server": "NODE_ENV=dev node functions/index.js",
+    "server": "NODE_ENV=development node functions/index.js",
     "start": "npm run server | npm run client",
     "build": "react-scripts build | npm run build:functions",
     "build:functions": "netlify-lambda build functions",
