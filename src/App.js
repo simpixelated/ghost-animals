@@ -18,7 +18,7 @@ class App extends Component {
   }
   
   fetchAnimals = async () => {
-    return await fetch('http://localhost:3002/api/animals')
+    return await fetch('http://localhost:3002/serverless-http')
       .then(response => response.json());
   }
 
