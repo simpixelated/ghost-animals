@@ -18,7 +18,7 @@ class App extends Component {
   }
   
   fetchAnimals = async () => {
-    return await fetch(`${process.env.NODE_ENV === 'development' ? 'http://localhost:3002' : '/.netlify/functions'}/serverless-http`)
+    return await fetch(`${process.env.NODE_ENV === 'development' ? 'http://localhost:3002/' : '/.netlify/functions/index'}`)
       .then(response => response.json());
   }
 

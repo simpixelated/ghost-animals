@@ -1,10 +1,10 @@
 const serverless = require('serverless-http')
-const functionName = 'serverless-http'
+// const functionName = 'serverless-http'
 const express = require('express');
 
 const expressApp = (functionName) => {
   const app = express();
-  const basePath = (process.env.NODE_ENV === 'dev') ? `/${functionName}` : `/.netlify/functions/${functionName}/`;
+  const basePath = (process.env.NODE_ENV === 'development') ? `/` : `/.netlify/functions/index`;
   app.set("port", process.env.PORT || 3002);
   app.use(basePath, (req, res, next) => {
     res.header("Content-Type",'application/json');
@@ -42,7 +42,7 @@ const expressApp = (functionName) => {
   return app;
 };
 
-const app = expressApp(functionName)
+const app = expressApp()
 
 // Export lambda handler
 exports.handler = serverless(app)
