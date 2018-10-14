@@ -19,6 +19,12 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  background-color: grey;
+  color: #ffffff;
+  cursor: none;
+}
+
 @media all and (max-width:30em) {
   .button {
     display: block;
